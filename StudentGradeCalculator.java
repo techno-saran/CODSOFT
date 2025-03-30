@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class StudentGradeCalculator {
     public static char calculateGrade(double percentage) {
         if (percentage >= 90) {
@@ -15,14 +14,10 @@ public class StudentGradeCalculator {
         } else {
             return 'E';
         }
-    }
-
-    public static void main(String[] args) {
+    }   public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("Enter the number of subjects: ");
         int numSubjects = scanner.nextInt();
-        
         double[] marks = new double[numSubjects];
         double totalMarks = 0;
         
@@ -36,15 +31,13 @@ public class StudentGradeCalculator {
             }
             totalMarks += marks[i];
         }
-        
-        double averagePercentage = totalMarks / numSubjects;
+       double averagePercentage = totalMarks / numSubjects;
         char grade = calculateGrade(averagePercentage);
         
         System.out.println("\n--- Student Grade Report ---");
         System.out.println("Total Marks: " + totalMarks + "/" + (numSubjects * 100));
         System.out.println("Average Percentage: " + String.format("%.2f", averagePercentage) + "%");
         System.out.println("Grade: " + grade);
-
         scanner.close();
     }
 }

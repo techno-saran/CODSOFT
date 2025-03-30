@@ -1,6 +1,5 @@
 import java.util.Random;
 import java.util.Scanner;
-
 public class NumberGuessingGame 
 {
     public static void main(String[] args) 
@@ -9,9 +8,7 @@ public class NumberGuessingGame
         Random random = new Random();
         boolean playAgain = true;
         int totalScore = 0;
-        
         System.out.println("Welcome to the Number Guessing Game!");
-        
         while (playAgain) 
         {
             int numberToGuess = random.nextInt(100) + 1; 
@@ -29,7 +26,7 @@ public class NumberGuessingGame
                 if (userGuess == numberToGuess)
                  {
                     System.out.println("Congratulations! You guessed the number correctly.");
-                    totalScore += attempts; // More attempts left means higher score
+                    totalScore += attempts; 
                     guessedCorrectly = true;
                     break;
                 } else if (userGuess < numberToGuess) 
@@ -45,12 +42,10 @@ public class NumberGuessingGame
                     System.out.println("You have " + attempts + " attempts left.");
                 }
             }
-
-            if (!guessedCorrectly) 
+                if (!guessedCorrectly) 
             {
                 System.out.println("Sorry, you've run out of attempts. The correct number was: " + numberToGuess);
             }
-
             System.out.println("Your current score: " + totalScore);
 
             System.out.print("\nDo you want to play again? (yes/no): ");
